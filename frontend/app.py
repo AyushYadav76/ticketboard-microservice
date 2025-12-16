@@ -12,7 +12,7 @@ PASSWORD = "securepassword"
 
 # === STREAMLIT UI ===
 st.set_page_config(page_title="TicketBoard", layout="wide")
-st.title("🎫 TicketBoard - DevOps Project")
+st.title("🎫 TicketBoard - MicroService")
 st.markdown("A CI/CD-deployed microservice for managing technical tickets.")
 
 # === FETCH TICKETS ===
