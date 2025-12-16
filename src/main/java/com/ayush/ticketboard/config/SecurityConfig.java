@@ -17,7 +17,7 @@ public class SecurityConfig {
     public InMemoryUserDetailsManager userDetailsService() {
         UserDetails user = User.withDefaultPasswordEncoder()
             .username("admin")
-            .password("securepassword")
+            .password("securepassword")  // ← Must match!
             .roles("USER")
             .build();
         return new InMemoryUserDetailsManager(user);
