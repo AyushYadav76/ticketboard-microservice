@@ -49,19 +49,14 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        <!-- H2 (dev) -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
 
         <!-- PostgreSQL -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <!-- <scope>runtime</scope> -->
+            <scope>runtime</scope>
         </dependency>
+
 
         <!-- Prometheus -->
         <dependency>
@@ -83,14 +78,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <includes>
-                        <include>
-                            <groupId>org.postgresql</groupId>
-                            <artifactId>postgresql</artifactId>
-                        </include>
-                    </includes>
-                </configuration>
             </plugin>
         </plugins>
     </build>

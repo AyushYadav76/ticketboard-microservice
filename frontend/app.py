@@ -6,7 +6,7 @@ from requests.auth import HTTPBasicAuth
 
 # === CONFIGURATION ===
 # Replace with your EC2 public IP
-BACKEND_URL = "http://16.171.55.33:8080"
+BACKEND_URL = "http://backend:8080"
 USERNAME = "admin"
 PASSWORD = "securepassword"
 
