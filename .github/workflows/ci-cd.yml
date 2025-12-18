@@ -68,10 +68,22 @@ jobs:
             sleep 15
 
       # 9. Health Check
-      - name: Verify deployment health
-        run: |
-          curl -f http://${{ secrets.EC2_HOST }}:8080/actuator/health
-          echo "✅ Backend is UP!"
-          curl -f http://${{ secrets.EC2_HOST }}:8501
-          echo "✅ Frontend is UP!"
-          
+      # - name: Verify deployment health
+      #   run: |
+      #     curl -f http://${{ secrets.EC2_HOST }}:8080/actuator/health
+      #     echo "✅ Backend is UP!"
+      #     curl -f http://${{ secrets.EC2_HOST }}:8501
+      #     echo "✅ Frontend is UP!"
+      - name: Deploy and Verify
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /opt/ticketboard
+            docker-compose pull
+            docker-compose up -d
+            sleep 30
+            curl -f http://localhost:8080/actuator/health
+            curl -f http://localhost:8501
