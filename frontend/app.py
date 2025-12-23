@@ -5,13 +5,12 @@ import requests
 from requests.auth import HTTPBasicAuth
 
 # === CONFIGURATION ===
-# Replace with your EC2 public IP
 BACKEND_URL = "http://backend:8080"
 USERNAME = "admin"
 PASSWORD = "securepassword"
 
 # === STREAMLIT UI ===
-st.set_page_config(page_title="TicketBoard", layout="wide")
+st.set_page_config(page_title="TicketBoard-service", layout="wide")
 st.title("🎫 TicketBoard - MicroService")
 st.markdown("A CI/CD-deployed microservice for managing technical tickets.")
 
